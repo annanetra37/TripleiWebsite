@@ -1,0 +1,36 @@
+</main>
+<section class="bg-mint"><div class="container" style="padding-block:var(--section-y)">
+  <div class="cta-card">
+    <div class="stack" style="gap:var(--space-5);align-items:flex-start">
+      <span class="eyebrow" style="position:static">EcoHub&trade;</span>
+      <h2 class="h1">Your single source of truth for accurate, actionable ESG insights</h2>
+      <p class="lead">EcoHub&rsquo;s AI unifies your sustainability data into a holistic ESG architecture.</p>
+      <a class="btn btn-primary btn-lg" href="contact.html">Request a demo</a>
+    </div>
+    <img src="assets/img/ecohub-architecture.svg" alt="EcoHub unified ESG data architecture diagram" loading="lazy" style="width:100%;border-radius:var(--radius-lg)">
+  </div>
+</div></section>
+<footer class="site-footer"><div class="container" style="padding:64px 0 36px">
+  <div class="footer-grid">
+    <div class="stack" style="gap:18px;max-width:280px">
+      <a class="logo on-dark" href="index.html" aria-label="Triple I home"><img src="assets/img/logo-white.png" alt="" width="36" height="34" style="height:34px;width:auto;display:block">Triple I</a>
+      <p style="font-size:var(--fs-sm);line-height:var(--lh-relaxed)">100% AI-powered ESG reporting &mdash; zero manual work, ever. Built for compliance, designed for speed.</p>
+      <div class="footer-partners">
+        <span>Microsoft for Startups</span>
+        <span>NVIDIA Inception</span>
+        <span>Cambridge CISL</span>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Platform</h4><a href="#">Features</a><a href="#">Assessment Tool</a><a href="#">Request Demo</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="#">Blog & ESG Guides</a><a href="#">Webinars</a><a href="#">Podcast</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Data Security</a></div>
+    <div class="footer-col"><h4>Solutions</h4><a href="#">VSME Reporting</a><a href="#">Enterprise ESG</a><a href="#">SME Compliance</a><a href="#">Public Sector</a><a href="#">Industry Solutions</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Triple I &mdash; Insight Impact Innovation Inc.</span>
+    <span>131 Continental Dr, Suite 305, Newark, DE 19713, USA &middot; info@triplei.io</span>
+  </div>
+</div></footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

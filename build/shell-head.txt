@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industries We Serve — ESG for Every Sector | Triple I</title>
+<meta name="description" content="AI-powered ESG compliance for SMEs, high-impact industries, governments, NGOs and VSME reporters. Triple I adapts to any sector’s sustainability needs.">
+<link rel="canonical" href="https://triplei.io/industries">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#12A02A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Triple I">
+<meta property="og:title" content="Industries We Serve — ESG for Every Sector | Triple I">
+<meta property="og:description" content="AI-powered ESG compliance for SMEs, high-impact industries, governments, NGOs and VSME reporters. Triple I adapts to any sector’s sustainability needs.">
+<meta property="og:url" content="https://triplei.io/industries">
+<meta property="og:image" content="https://triplei.io/assets/img/ecohub-architecture.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Industries We Serve — ESG for Every Sector | Triple I">
+<meta name="twitter:description" content="AI-powered ESG compliance for SMEs, high-impact industries, governments, NGOs and VSME reporters. Triple I adapts to any sector’s sustainability needs.">
+<meta name="twitter:image" content="https://triplei.io/assets/img/ecohub-architecture.svg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Triple I","legalName":"Insight Impact Innovation Inc.","url":"https://triplei.io","description":"100% AI-powered ESG reporting platform. Automate CSRD, ESRS, GRI and ISSB disclosures with zero manual work.","email":"info@triplei.io","address":{"@type":"PostalAddress","streetAddress":"131 Continental Dr, Suite 305","addressLocality":"Newark","addressRegion":"DE","postalCode":"19713","addressCountry":"US"}}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://triplei.io/industries#page","url":"https://triplei.io/industries","name":"Industries We Serve — ESG for Every Sector | Triple I","description":"AI-powered ESG compliance for SMEs, high-impact industries, governments, NGOs and VSME reporters. Triple I adapts to any sector’s sustainability needs.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Triple I","url":"https://triplei.io"},"about":{"@type":"Thing","name":"ESG reporting automation"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".hero p",".acc-q",".acc-a"]},"primaryImageOfPage":{"@type":"ImageObject","url":"https://triplei.io/assets/img/ecohub-architecture.svg"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://triplei.io/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://triplei.io/industries"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="Triple I home"><img src="assets/img/logo-darkgreen.png" alt="" width="38" height="36" style="height:36px;width:auto;display:block">Triple I</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <span class="nav-has-mega"><a href="industries.html" class="active" aria-current="page" aria-expanded="false" aria-controls="mega-industries">Industries<svg class="nav-chev" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 6l5-4 5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+      <div class="mega" id="mega-industries" role="group" aria-label="Industries">
+        <div class="container mega-inner">
+          <div class="mega-col">
+            <p class="mega-head">High-Impact Industries</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#energy-utilities"><span class="mega-ico"><img src="assets/img/high-impact.svg" alt="" loading="lazy"></span>Energy &amp; Utilities</a></li>
+              <li><a href="industries.html#transportation-logistics"><span class="mega-ico"><img src="assets/img/connectors.svg" alt="" loading="lazy"></span>Transportation &amp; Logistics</a></li>
+              <li><a href="industries.html#financial-services"><span class="mega-ico"><img src="assets/img/save-money.svg" alt="" loading="lazy"></span>Financial Services</a></li>
+              <li><a href="industries.html#real-estate-construction"><span class="mega-ico"><img src="assets/img/check-list.svg" alt="" loading="lazy"></span>Real Estate &amp; Construction</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <p class="mega-head">Growth-Minded Firms</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#retail-consumer-goods"><span class="mega-ico"><img src="assets/img/growth-firms.svg" alt="" loading="lazy"></span>Retail &amp; Consumer Goods</a></li>
+              <li><a href="industries.html#technology-software"><span class="mega-ico"><img src="assets/img/ai-automation.svg" alt="" loading="lazy"></span>Technology &amp; Software</a></li>
+            </ul>
+            <p class="mega-head">ESG for NGOs</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#ngos"><span class="mega-ico"><img src="assets/img/ngos.svg" alt="" loading="lazy"></span>NGOs</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <p class="mega-head">Other Industries</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#healthcare-life-sciences"><span class="mega-ico"><img src="assets/img/data-integration.svg" alt="" loading="lazy"></span>Healthcare &amp; Life Sciences</a></li>
+              <li><a href="industries.html#agriculture-aerospace"><span class="mega-ico"><img src="assets/img/report-gen.svg" alt="" loading="lazy"></span>Agriculture, Aerospace, Etc.</a></li>
+            </ul>
+            <p class="mega-head">Government &amp; Cities</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#governments-cities"><span class="mega-ico"><img src="assets/img/government.svg" alt="" loading="lazy"></span>Governments &amp; Cities</a></li>
+            </ul>
+          </div>
+          <div class="mega-col">
+            <p class="mega-head">Voluntary ESG</p>
+            <ul class="mega-list">
+              <li><a href="industries.html#voluntary-esg-smes"><span class="mega-ico"><img src="assets/img/vsme.svg" alt="" loading="lazy"></span>Voluntary ESG For SMEs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="nav-cta">
+      <a class="login" href="contact.html">Log in</a>
+      <a class="btn btn-primary btn-sm" href="contact.html">Request a demo</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="var(--ink-900)" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="industries.html">Industries</a>
+    <a class="sub" href="industries.html#energy-utilities">Energy &amp; Utilities</a>
+    <a class="sub" href="industries.html#transportation-logistics">Transportation &amp; Logistics</a>
+    <a class="sub" href="industries.html#financial-services">Financial Services</a>
+    <a class="sub" href="industries.html#real-estate-construction">Real Estate &amp; Construction</a>
+    <a class="sub" href="industries.html#retail-consumer-goods">Retail &amp; Consumer Goods</a>
+    <a class="sub" href="industries.html#technology-software">Technology &amp; Software</a>
+    <a class="sub" href="industries.html#ngos">NGOs</a>
+    <a class="sub" href="industries.html#healthcare-life-sciences">Healthcare &amp; Life Sciences</a>
+    <a class="sub" href="industries.html#agriculture-aerospace">Agriculture, Aerospace, Etc.</a>
+    <a class="sub" href="industries.html#governments-cities">Governments &amp; Cities</a>
+    <a class="sub" href="industries.html#voluntary-esg-smes">Voluntary ESG For SMEs</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <div class="row"><a class="btn btn-outline btn-sm btn-full" href="https://app.triplei.io/login">Log in</a><a class="btn btn-primary btn-sm btn-full" href="contact.html">Request a demo</a></div>
+  </div>
+</header>

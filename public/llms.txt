@@ -1,0 +1,30 @@
+# Triple I
+
+> Triple I (Insight · Impact · Innovation) is an AI-powered ESG reporting platform. Its product, EcoHub™, ingests raw sustainability data from 100+ connectors, automatically maps and standardizes it, and generates audit-ready ESG reports aligned to CSRD, ESRS, GRI, ISSB, EU Taxonomy and the GHG Protocol (Scope 1, 2 & 3). Positioning: 100% AI-powered ESG reporting — zero manual work, ever.
+
+Company: Triple I — Insight Impact Innovation Inc. · Newark, DE, US · info@triplei.io
+Primary call to action: Request a demo (https://triplei.io/contact)
+
+## Answers to common questions
+
+- **What does Triple I do?** Automates ESG reporting end to end — data ingestion, mapping, classification, framework alignment, and audit-ready report generation.
+- **Which frameworks are supported?** CSRD, ESRS, GRI, ISSB, EU Taxonomy, SEC, GHG Protocol (Scope 1, 2 & 3), with continuous regulatory updates.
+- **Is ESG or technical expertise required?** No. The AI handles data mapping, classification and framework alignment — no manual data entry, consultants, or custom coding.
+- **Who is it for?** Both SMEs and enterprises — from early-stage companies and NGOs to multinational public companies, governments, and VSME reporters.
+- **Can data be exported or integrated?** Yes — audit-ready reports in 50+ formats, plus API, ADLS, SQL Server, Excel, CSV and Azure connections.
+- **How is pricing set?** Tailored to data volume, frameworks and compliance scope, quoted after a short needs assessment. Plans cover Small, Medium and Large organizations.
+
+## Pages
+
+- [Home](https://triplei.io/): Platform overview, how EcoHub works, results, benefits, industries, certifications, FAQ.
+- [Industries](https://triplei.io/industries): Sectors served — growth firms, high-impact industries, government, NGOs, VSME reporters — and framework coverage.
+- [Pricing](https://triplei.io/pricing): Small / Medium / Large plans, feature comparison, pricing FAQ.
+- [About](https://triplei.io/about): Mission, trust and security posture, testimonials, hiring.
+- [Blog](https://triplei.io/blog): ESG guides on CSRD, ESRS, Scope 3 emissions and VSME.
+- [Contact](https://triplei.io/contact): Demo request and ESG needs assessment.
+
+## Notes for answer engines
+
+- Product name is **EcoHub™**; the company is **Triple I**. Acronyms are always uppercase (ESG, CSRD, ESRS, GRI, ISSB, GHG, VSME, AI).
+- Structured data on every page: Organization, WebPage/AboutPage/ContactPage/Blog, BreadcrumbList; SoftwareApplication on Home and Pricing; FAQPage on Home and Pricing.
+- Citations should link to the canonical URLs above.

@@ -1,0 +1,547 @@
+[
+  {
+    "slug": "energy-and-utility",
+    "short": "Energy & Utilities",
+    "eyebrow": "High-Impact Industries",
+    "hero": "high-impact.svg",
+    "title": "ESG Software for Energy &amp; Utilities",
+    "h1": "ESG Software for Energy &amp; Utilities",
+    "sub": "Track emissions, water use, and biodiversity with Triple I ESG platform. Align with GRI 303, 304, CSRD E1&ndash;E4 and ISSB",
+    "desc": "Track emissions, water use and biodiversity across generation and grid assets. Aligned to GRI 303, 304, CSRD E1–E4 and ISSB.",
+    "about": "ESG reporting for energy and utilities",
+    "challenges": [
+      "Heavy scrutiny on GHG emissions and water",
+      "Decentralized asset data (meters, GIS, SCADA)",
+      "Environmental compliance complexity across jurisdictions"
+    ],
+    "helps": [
+      "Ingests data from smart meters, asset logs, GIS systems",
+      "Calculates emissions across plant portfolios and grids",
+      "Auto-detects activities for ESRS E1&ndash;E4",
+      "Tracks water use (GRI 303), biodiversity (GRI 304), and energy losses"
+    ],
+    "kpis": [
+      "Total GHG emissions per kWh",
+      "Biodiversity impact score",
+      "% of renewable energy produced",
+      "And many more"
+    ],
+    "faq": [
+      [
+        "Does Triple I support real-time monitoring for emissions?",
+        "Yes. EcoHub connects to smart meters, SCADA and asset logs, so emissions figures update as new readings arrive rather than at quarter end."
+      ],
+      [
+        "Can I track water use and recycling?",
+        "Water withdrawal, consumption, discharge and recycling rates are tracked and mapped to GRI 303 disclosures automatically."
+      ],
+      [
+        "How do you measure biodiversity impact?",
+        "Site locations are screened against protected and sensitive areas, then scored and reported against GRI 304."
+      ],
+      [
+        "Is reporting automated across multiple plants?",
+        "Yes. Data is consolidated across plant portfolios and grids, with per-site and group-level reports generated from the same source."
+      ],
+      [
+        "Do you support SFDR or EU taxonomy?",
+        "Yes. EU Taxonomy alignment and SFDR-relevant indicators are supported alongside CSRD, ESRS, GRI and ISSB."
+      ]
+    ]
+  },
+  {
+    "slug": "transportation-and-logistics",
+    "short": "Transportation & Logistics",
+    "eyebrow": "High-Impact Industries",
+    "hero": "connectors.svg",
+    "title": "Transportation &amp; Logistics ESG Automation",
+    "h1": "Transportation &amp; Logistics ESG Automation",
+    "sub": "Track Scope 1 &amp; 3 fuel emissions, route data, and carbon cost per delivery. CSRD and GHG Protocol ready.",
+    "desc": "Automate Scope 1 and Scope 3 transport emissions from telematics, fuel receipts and GPS data. CSRD and GHG Protocol ready.",
+    "about": "ESG reporting for transportation and logistics",
+    "challenges": [
+      "High direct (fuel) and indirect (Scope 3) emissions",
+      "Hard-to-track fragmented transport data",
+      "Route optimization and cost tradeoffs"
+    ],
+    "helps": [
+      "Ingests telematics, receipts, and GPS data",
+      "Calculates distance-based carbon output",
+      "Tracks emissions by vehicle, route, or warehouse",
+      "Maps to GRI 305 and CSRD E1"
+    ],
+    "kpis": [
+      "Emissions per delivery mile",
+      "Carbon cost per shipment",
+      "% of low-emission fleet adoption"
+    ],
+    "faq": [
+      [
+        "How are Scope 1 vs Scope 3 emissions distinguished?",
+        "Owned and operated fleet activity is classified as Scope 1; contracted carriers and upstream transport are classified as Scope 3, following the GHG Protocol."
+      ],
+      [
+        "What formats can you ingest for transport data?",
+        "Telematics feeds, fuel-card statements, GPS exports, carrier invoices and spreadsheets, plus direct API, SQL and Excel connections."
+      ],
+      [
+        "Can I track emissions per customer or shipment?",
+        "Yes. Emissions can be attributed by shipment, route, customer, vehicle or warehouse."
+      ],
+      [
+        "Is this compliant with CSRD and GRI 305?",
+        "Yes. Transport emissions are mapped to CSRD E1 and GRI 305 disclosure requirements."
+      ],
+      [
+        "Do you offer route optimization?",
+        "EcoHub reports the carbon cost of routes and fleet mixes so teams can compare options; it reports on efficiency rather than dispatching vehicles."
+      ]
+    ]
+  },
+  {
+    "slug": "financial-services",
+    "short": "Financial Services",
+    "eyebrow": "High-Impact Industries",
+    "hero": "save-money.svg",
+    "title": "ESG Automation for Financial Services",
+    "h1": "ESG Automation for Financial Services",
+    "sub": "Meet TCFD, CSRD, and SASB standards. Track governance, climate risk, DEI, and sustainable portfolios.",
+    "desc": "Financed-emissions accounting, governance and DEI disclosure, and portfolio ESG scoring aligned to TCFD, CSRD and SASB.",
+    "about": "ESG reporting for financial services",
+    "challenges": [
+      "Portfolio emissions &amp; financed emissions (Scope 3)",
+      "Governance and ethics disclosures",
+      "DEI &amp; HR-related ESG reporting (GRI 405, ESRS S1)"
+    ],
+    "helps": [
+      "Maps portfolio data to ESG frameworks",
+      "Automates board diversity, policy, and compliance reporting",
+      "Tracks Scope 3 financed emissions",
+      "Supports ESG labels, EU taxonomy, and SFDR"
+    ],
+    "kpis": [
+      "Emissions per $M invested",
+      "% board diversity",
+      "% sustainable portfolio exposure",
+      "And many more"
+    ],
+    "faq": [
+      [
+        "Can Triple I track financed emissions for investment portfolios?",
+        "Yes. Portfolio holdings are mapped to emission factors and reported as Scope 3 financed emissions."
+      ],
+      [
+        "What governance data can be automated?",
+        "Board composition and diversity, policy coverage, ethics and compliance records, and remuneration disclosures."
+      ],
+      [
+        "Is TCFD reporting supported?",
+        "Yes, alongside CSRD, ESRS, SASB, GRI and ISSB."
+      ],
+      [
+        "Can we report DEI data securely?",
+        "Yes. Workforce data is handled under role-based access with encryption in transit and at rest, and reported in aggregate."
+      ],
+      [
+        "Does the platform handle SFDR for EU asset managers?",
+        "Yes. SFDR indicators and EU Taxonomy alignment are supported."
+      ]
+    ]
+  },
+  {
+    "slug": "real-estate-and-construction",
+    "short": "Real Estate & Construction",
+    "eyebrow": "High-Impact Industries",
+    "hero": "check-list.svg",
+    "title": "Real Estate &amp; Construction ESG Compliance",
+    "h1": "Real Estate &amp; Construction ESG Compliance",
+    "sub": "Automate ESG metrics in real estate. From building emissions to site safety, align with GRI 302, 403, ISSB and ESRS E1.",
+    "desc": "Building-level emissions, energy, waste and site safety consolidated and mapped to GRI 302, GRI 403, ISSB and ESRS E1.",
+    "about": "ESG reporting for real estate and construction",
+    "challenges": [
+      "Building operations = 40% of global CO&#8322;",
+      "Tracking energy, safety, waste across sites",
+      "Disclosures needed for tenants, investors, and governments"
+    ],
+    "helps": [
+      "Connects to BIM, building sensors, and energy audits",
+      "Tracks Scope 1&ndash;3 building emissions",
+      "Maps data to ESRS E1, GRI 302 (Energy), 403 (Safety)",
+      "Supports green certifications &amp; climate risk disclosures"
+    ],
+    "kpis": [
+      "Emissions per m&sup2;",
+      "Safety incident rate",
+      "% certified sustainable buildings",
+      "And many more"
+    ],
+    "faq": [
+      [
+        "Do you integrate with building automation systems?",
+        "Yes. EcoHub connects to BMS and sensor feeds, BIM models and energy-audit exports."
+      ],
+      [
+        "Can I track waste and water across properties?",
+        "Yes. Waste streams and water use are tracked per property and consolidated at portfolio level."
+      ],
+      [
+        "Are certifications like LEED or BREEAM included?",
+        "Certification status is tracked per asset and reported alongside your disclosures."
+      ],
+      [
+        "Is there a way to track climate risk?",
+        "Yes. Physical and transition climate risk indicators are supported for ISSB and ESRS E1 reporting."
+      ],
+      [
+        "Can construction data be used too?",
+        "Yes. Site energy, contractor activity, embodied carbon and safety incidents can all be ingested."
+      ]
+    ]
+  },
+  {
+    "slug": "retail-and-consumer-goods",
+    "short": "Retail & Consumer Goods",
+    "eyebrow": "Growth-Minded Firms",
+    "hero": "growth-firms.svg",
+    "title": "ESG for Retail &amp; Consumer Goods",
+    "h1": "ESG for Retail &amp; Consumer Goods",
+    "sub": "Track packaging, product lifecycle, supplier audits and labor practices. Align with GRI 301, 308, and ESRS S2.",
+    "desc": "Packaging, product lifecycle, supplier audits and labour practices tracked and mapped to GRI 301, GRI 308 and ESRS S2.",
+    "about": "ESG reporting for retail and consumer goods",
+    "challenges": [
+      "Packaging waste and product transparency",
+      "Ethical sourcing and supplier audits",
+      "Consumer demand for sustainable products"
+    ],
+    "helps": [
+      "Maps SKU and supply chain data to GRI and ESRS S indicators",
+      "Automates supplier ESG audits",
+      "Tracks packaging material and product impact"
+    ],
+    "kpis": [
+      "% of products with ESG label",
+      "% of suppliers with ESG screening",
+      "Packaging recyclability score"
+    ],
+    "faq": [
+      [
+        "Can Triple I evaluate supplier ESG performance?",
+        "Yes. Supplier data is screened and scored, and audit requests are automated and tracked."
+      ],
+      [
+        "Does your system track material composition and recyclability?",
+        "Yes. Packaging and product materials are tracked with recyclability scoring under GRI 301."
+      ],
+      [
+        "Can we integrate with our ERP or PoS system?",
+        "Yes, through the 100+ connectors plus API, SQL, Excel and CSV imports."
+      ],
+      [
+        "Do you support product carbon footprinting?",
+        "Yes. SKU-level footprints are calculated from material, production and transport data."
+      ],
+      [
+        "Is compliance with ESRS S2 included?",
+        "Yes. Workers-in-the-value-chain disclosures under ESRS S2 are supported."
+      ]
+    ]
+  },
+  {
+    "slug": "technology-and-software",
+    "short": "Technology & Software",
+    "eyebrow": "Growth-Minded Firms",
+    "hero": "ai-automation.svg",
+    "title": "ESG for Tech &amp; Digital Companies",
+    "h1": "ESG for Tech &amp; Digital Companies",
+    "sub": "AI-driven ESG tracking for digital firms. Monitor data center emissions, ethics, and DEI. ESRS and GRI compliant.",
+    "desc": "ESG tracking for digital firms: data-centre and cloud emissions, AI and cybersecurity governance, DEI. ESRS and GRI compliant.",
+    "about": "ESG reporting for technology and software companies",
+    "challenges": [
+      "Cloud and data center energy use (Scope 2)",
+      "ESG policies on AI, ethics, and cybersecurity",
+      "Employee well-being, DEI, and remote work impact"
+    ],
+    "helps": [
+      "Tracks cloud resource energy by provider",
+      "Maps policies and DEI data to ESRS S1, GRI 418",
+      "Supports TCFD-aligned disclosures for digital operations"
+    ],
+    "kpis": [
+      "Data center emissions (gCO&#8322;/kWh)",
+      "% workforce diversity by department",
+      "Privacy compliance readiness score"
+    ],
+    "faq": [
+      [
+        "How are cloud-based emissions calculated?",
+        "Usage is pulled per provider and region, then converted with grid and provider-specific emission factors into Scope 2 figures."
+      ],
+      [
+        "Can I report on AI ethics and digital governance?",
+        "Yes. AI, ethics and cybersecurity policies are tracked as governance disclosures and mapped to the relevant ESRS and GRI indicators."
+      ],
+      [
+        "How is DEI data handled?",
+        "Workforce data is stored under role-based access, encrypted, and reported in aggregate against ESRS S1 and GRI 405."
+      ],
+      [
+        "Does this help with ESG ratings and audits?",
+        "Yes. Every figure keeps its source and calculation trail, which is what raters and auditors ask for."
+      ],
+      [
+        "Can remote work impacts be included?",
+        "Yes. Remote-work energy and commuting avoidance can be included in your Scope 3 inventory."
+      ]
+    ]
+  },
+  {
+    "slug": "healthcare-and-life-sciences",
+    "short": "Healthcare & Life Sciences",
+    "eyebrow": "Other Industries",
+    "hero": "data-integration.svg",
+    "title": "ESG in Healthcare &amp; Life Sciences",
+    "h1": "ESG in Healthcare &amp; Life Sciences",
+    "sub": "Streamline ESG in pharma and hospitals. Automate reporting on procurement, lab emissions, and safety compliance.",
+    "desc": "Automated ESG reporting for pharma and hospitals: lab and facility emissions, procurement sustainability and safety compliance.",
+    "about": "ESG reporting for healthcare and life sciences",
+    "challenges": [
+      "Hazardous material tracking",
+      "Procurement sustainability",
+      "Regulatory and public ESG transparency"
+    ],
+    "helps": [
+      "Captures lab and facility data automatically",
+      "Tracks supplier and clinical procurement emissions",
+      "Maps to GRI 416 (Product Safety), ESRS S1 (Workforce)"
+    ],
+    "kpis": [
+      "Emissions per patient or operation",
+      "% of certified sustainable suppliers",
+      "Occupational safety compliance rate"
+    ],
+    "faq": [
+      [
+        "How do you track emissions from labs or hospitals?",
+        "Facility energy, medical gases, lab equipment and waste streams are ingested from building systems and supplier records, then converted to emissions."
+      ],
+      [
+        "Can you automate healthcare procurement sustainability tracking?",
+        "Yes. Clinical and non-clinical procurement is screened, scored and reported as supply-chain ESG performance."
+      ],
+      [
+        "Is Triple I compliant with health sector ESG regulations?",
+        "Reporting covers CSRD, ESRS, GRI and ISSB, including the product-safety and workforce disclosures most relevant to the sector."
+      ],
+      [
+        "How is safety data handled?",
+        "Occupational safety and incident data is tracked against GRI 403 and reported with restricted access."
+      ],
+      [
+        "Can ESG be tracked by department or service line?",
+        "Yes. Metrics can be broken down by site, department or service line as well as at group level."
+      ]
+    ]
+  },
+  {
+    "slug": "vsme",
+    "short": "Voluntary ESG for SMEs",
+    "eyebrow": "Voluntary ESG",
+    "hero": "vsme.svg",
+    "title": "Align with the EFRAG VSME Standard",
+    "h1": "Align with the EFRAG VSME Standard &mdash; effortlessly",
+    "sub": "Triple I enables very small and micro enterprises to meet ESG disclosure requirements with minimal time and effort.",
+    "desc": "The EFRAG VSME standard, automated. Triple I helps small and micro enterprises meet ESG disclosure requests with minimal effort.",
+    "about": "VSME reporting for small and micro enterprises",
+    "challenges": [
+      "Respond to ESG requests from clients, investors, and lenders",
+      "Build credibility without hiring ESG consultants",
+      "Prepare for future regulatory requirements with minimal effort"
+    ],
+    "helps": [
+      "Auto-maps raw data (HR, utility, finance) to VSME Basic &amp; Comprehensive modules",
+      "Calculates GHG emissions (Scope 1 &amp; 2), plus water, workforce, and governance indicators",
+      "Generates audit-ready ESG reports and exportable ESG data files",
+      "Supports continuous improvement and gap analysis over time"
+    ],
+    "kpis": [
+      "Manufacturing &amp; industrial businesses",
+      "Construction &amp; logistics subcontractors",
+      "Food, agriculture &amp; CPG producers",
+      "Tech &amp; SaaS startups preparing for funding"
+    ],
+    "faq": [
+      [
+        "Which ESG frameworks do you support?",
+        "CSRD, ESRS, GRI, ISSB, EU Taxonomy, SEC and the GHG Protocol (Scope 1, 2 &amp; 3), alongside the EFRAG VSME standard."
+      ],
+      [
+        "Do I need technical skills to use Triple I?",
+        "No. The AI handles data mapping, classification and framework alignment, so there is no manual data entry or custom coding."
+      ],
+      [
+        "How accurate are the AI-generated reports?",
+        "Every figure keeps its source, emission factor and calculation trail, so reports are auditable rather than estimated."
+      ],
+      [
+        "Can I export the data or integrate with other tools?",
+        "Yes. Reports export in 50+ formats, with API, ADLS, SQL Server, Excel, CSV and Azure connections available."
+      ],
+      [
+        "What industries does Triple I support?",
+        "All of them &mdash; from energy and logistics to retail, tech, healthcare, NGOs and the public sector."
+      ]
+    ]
+  },
+  {
+    "slug": "ngos",
+    "short": "NGOs",
+    "eyebrow": "ESG for NGOs",
+    "hero": "ngos.svg",
+    "title": "ESG Reporting for Nonprofit &amp; Mission-Driven Organizations",
+    "h1": "ESG Reporting for Nonprofit &amp; Mission-Driven Organizations",
+    "sub": "Automate ESG and impact reporting for nonprofits. Align with SDGs, GRI 101&ndash;103, ESRS S1, and donor-specific frameworks. Simplify multi-program disclosures and data management.",
+    "desc": "Automated ESG and impact reporting for nonprofits, aligned to the SDGs, GRI 101–103, ESRS S1 and donor-specific frameworks.",
+    "about": "ESG and impact reporting for NGOs",
+    "challenges": [
+      "Donor, grant, or procurement ESG requirements",
+      "Field teams operating in fragmented data environments",
+      "Need for mission-aligned, not profit-based, sustainability metrics",
+      "No in-house ESG staff or technical resources"
+    ],
+    "helps": [
+      "Auto-collects data from programs, partners, field logs, and finance tools",
+      "Aligns with GRI for Nonprofits, SDGs, and ESRS S1 metrics",
+      "Tracks social impact, Scope 1 &amp; 2 emissions, workforce data, ethical governance",
+      "Allows custom tagging of projects and regions for report segmentation",
+      "Auto-generates funder-ready reports with version control and audit trail"
+    ],
+    "kpis": [
+      "Emissions per program or per beneficiary",
+      "Workforce diversity &amp; health metrics",
+      "% of certified or compliant field partners",
+      "% of projects aligned with SDGs"
+    ],
+    "faq": [
+      [
+        "Do ESG regulations apply to nonprofits?",
+        "Most nonprofits fall outside mandatory reporting, but donors, grant bodies and procurement partners increasingly require ESG disclosure."
+      ],
+      [
+        "Can Triple I track both emissions and social impact?",
+        "Yes. Scope 1 and 2 emissions sit alongside social impact, workforce and governance metrics in the same report."
+      ],
+      [
+        "Can you segment reports by program, donor, or region?",
+        "Yes. Projects and regions can be tagged freely, and reports are generated per segment."
+      ],
+      [
+        "What if we have limited digital infrastructure?",
+        "Field logs, spreadsheets and finance exports are enough to start &mdash; no ESG platform or in-house data team is required."
+      ],
+      [
+        "Can I use this for grant applications or donor reporting?",
+        "Yes. Funder-ready reports are generated with version control and a full audit trail."
+      ]
+    ]
+  },
+  {
+    "slug": "governments-and-cities",
+    "short": "Governments & Cities",
+    "eyebrow": "Government &amp; Cities",
+    "hero": "government.svg",
+    "title": "ESG &amp; Sustainability Reporting for the Public Sector",
+    "h1": "ESG &amp; Sustainability Reporting for Governments and Cities",
+    "sub": "Smart-city sustainability dashboards built on complex, multi-source public-sector data &mdash; with the audit trail public reporting demands.",
+    "desc": "ESG and sustainability reporting for governments, municipalities and public agencies, built on multi-source public-sector data.",
+    "about": "ESG reporting for governments and cities",
+    "challenges": [
+      "Sustainability data spread across departments, agencies and vendors",
+      "Public reporting held to a higher standard of transparency",
+      "Multiple overlapping national and EU reporting obligations"
+    ],
+    "helps": [
+      "Consolidates data from departments, utilities, fleets and facilities",
+      "Calculates municipal Scope 1, 2 and 3 emissions",
+      "Aligns disclosures to CSRD, ESRS, GRI and the GHG Protocol",
+      "Publishes dashboards and reports with a full audit trail"
+    ],
+    "kpis": [
+      "Emissions per resident",
+      "Municipal fleet and building emissions",
+      "% of renewable energy in public supply",
+      "Progress against climate targets"
+    ],
+    "faq": [
+      [
+        "Can data from separate departments be consolidated?",
+        "Yes. Each department or agency can feed data in independently while reporting rolls up to a single city-wide view."
+      ],
+      [
+        "Which frameworks apply to public bodies?",
+        "CSRD, ESRS, GRI and the GHG Protocol are supported, alongside national and EU-specific obligations."
+      ],
+      [
+        "Is the data auditable for public disclosure?",
+        "Every figure keeps its source, emission factor and calculation trail, which is what public audit requires."
+      ],
+      [
+        "Can we publish a public dashboard?",
+        "Yes. Reports and dashboards can be generated for publication as well as for internal use."
+      ],
+      [
+        "Do we need an in-house ESG team?",
+        "No. The AI handles mapping, classification and framework alignment."
+      ]
+    ]
+  },
+  {
+    "slug": "agriculture-aerospace",
+    "short": "Agriculture, Aerospace, etc.",
+    "eyebrow": "Other Industries",
+    "hero": "report-gen.svg",
+    "title": "ESG Reporting for Agriculture, Aerospace and Heavy Manufacturing",
+    "h1": "ESG Reporting for Agriculture, Aerospace and Beyond",
+    "sub": "Land use, livestock, aviation and heavy-manufacturing metrics aligned to the GHG Protocol, CSRD and GRI &mdash; whatever your sector reports on.",
+    "desc": "ESG reporting for agriculture, aerospace and heavy manufacturing: land use, livestock, aviation and production metrics, GHG Protocol aligned.",
+    "about": "ESG reporting for agriculture, aerospace and manufacturing",
+    "challenges": [
+      "Sector-specific metrics that generic ESG tools do not cover",
+      "Emissions spread across land, fleet, production and supply chain",
+      "Reporting obligations that differ by market and buyer"
+    ],
+    "helps": [
+      "Ingests production, land-use, fleet and supply-chain data",
+      "Applies sector-appropriate emission factors across Scope 1, 2 and 3",
+      "Maps activity data to CSRD, ESRS, GRI and the GHG Protocol",
+      "Generates audit-ready reports in 50+ formats"
+    ],
+    "kpis": [
+      "Emissions per unit produced",
+      "Land use and water intensity",
+      "Fleet and aviation fuel emissions",
+      "% of suppliers with ESG screening"
+    ],
+    "faq": [
+      [
+        "My sector is not listed &mdash; can you still help?",
+        "Yes. EcoHub is framework-driven rather than sector-locked, so activity data from any industry can be mapped and reported."
+      ],
+      [
+        "Are agricultural emissions such as livestock and land use covered?",
+        "Yes, with sector-appropriate emission factors under the GHG Protocol."
+      ],
+      [
+        "Can aviation and heavy fleet emissions be tracked?",
+        "Yes. Fuel, distance and fleet data are converted into Scope 1 and Scope 3 figures."
+      ],
+      [
+        "Which frameworks are supported?",
+        "CSRD, ESRS, GRI, ISSB, EU Taxonomy and the GHG Protocol (Scope 1, 2 &amp; 3)."
+      ],
+      [
+        "How long does setup take?",
+        "Most organizations connect their first data sources and see mapped results within days, not months."
+      ]
+    ]
+  }
+]

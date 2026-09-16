@@ -1,0 +1,9 @@
+# Nixpacks build config (used by Railway).
+# No dependencies to install — we just need Node to run server.js.
+providers = ["node"]
+
+[phases.install]
+cmds = ["echo 'no dependencies to install'"]
+
+[start]
+cmd = "node server.js"

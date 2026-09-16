@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitors — Triple I (private)</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0E1A11;--line:#DCE3DD;--muted:#5A6A5D;--brand:#12A02A;--mint:#EAF7EC;--bg:#F7FAF7}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:18px 26px;background:var(--ink);color:#fff}
+  header h1{margin:0;font-size:18px;font-weight:800;letter-spacing:-.02em}
+  header .live{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.72)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.22)}
+  main{padding:22px 26px 60px;max-width:1500px;margin:0 auto}
+  .bar{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:16px 18px;margin-bottom:20px}
+  .f{display:flex;flex-direction:column;gap:6px}
+  .f label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .f input,.f select{height:38px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font:inherit;
+    font-size:14px;background:#fff;color:var(--ink);min-width:130px}
+  .f input[type=search]{min-width:200px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;
+    font-weight:600;cursor:pointer;color:var(--muted)}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .btn{height:38px;border:0;border-radius:999px;padding:0 18px;font:inherit;font-size:14px;font-weight:700;
+    background:var(--brand);color:#fff;cursor:pointer}
+  .btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .kpi b{display:block;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:-.02em}
+  .kpi span{font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+  .card h3{margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .spark{display:flex;align-items:flex-end;gap:3px;height:120px}
+  .spark div{flex:1;background:var(--brand);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+  .spark div:hover::after{content:attr(data-t);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+    background:var(--ink);color:#fff;font-size:11px;padding:4px 7px;border-radius:6px;white-space:nowrap;z-index:2}
+  .rank{display:flex;flex-direction:column;gap:9px;font-size:13px}
+  .rank div{display:flex;justify-content:space-between;gap:10px}
+  .rank span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .rank b{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--muted)}
+  .tablewrap{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:auto;max-height:70vh}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{position:sticky;top:0;background:var(--mint);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);z-index:1}
+  td.wrap{white-space:normal;max-width:320px}
+  tbody tr:hover{background:#FAFDFA}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;background:var(--mint);color:#0B6B1C}
+  .tag.ai{background:#EDE9FE;color:#5B21B6}.tag.search{background:#DBEAFE;color:#1D4ED8}
+  .tag.social{background:#FCE7F3;color:#9D174D}.tag.direct{background:#F1F5F2;color:#445246}
+  .muted{color:var(--muted)}
+  .empty{padding:40px;text-align:center;color:var(--muted)}
+  @media (max-width:1100px){.grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Visitor analytics <span class="muted" style="font-weight:500;font-size:13px">/ triplei.io</span></h1>
+  <div class="live"><span class="dot"></span><span id="live">loading…</span></div>
+</header>
+<main>
+  <div class="bar">
+    <div class="f"><label for="from">From</label><input id="from" type="date"></div>
+    <div class="f"><label for="to">To</label><input id="to" type="date"></div>
+    <div class="f"><label for="country">Country</label><select id="country"><option value="">All</option></select></div>
+    <div class="f"><label for="city">City</label><select id="city"><option value="">All</option></select></div>
+    <div class="f"><label for="source">Source</label><select id="source"><option value="">All</option></select></div>
+    <div class="f"><label for="page">Page</label><select id="page"><option value="">All</option></select></div>
+    <div class="f"><label for="device">Device</label><select id="device"><option value="">All</option></select></div>
+    <div class="f"><label for="q">Search</label><input id="q" type="search" placeholder="IP, referrer, city, UA…"></div>
+    <div class="f"><label>&nbsp;</label><div class="chips">
+      <button class="chip" id="bots" type="button">Include bots</button>
+      <button class="chip on" id="views" type="button">Pageviews only</button>
+    </div></div>
+    <div class="f"><label>&nbsp;</label><button class="btn ghost" id="reset" type="button">Reset</button></div>
+    <div class="f"><label>&nbsp;</label><button class="btn" id="csv" type="button">Export to Excel (CSV)</button></div>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid">
+    <div class="card"><h3>Views per day</h3><div class="spark" id="spark"></div></div>
+    <div class="card"><h3>Traffic sources</h3><div class="rank" id="rSource"></div></div>
+    <div class="card"><h3>Top countries</h3><div class="rank" id="rCountry"></div></div>
+    <div class="card"><h3>Top pages</h3><div class="rank" id="rPage"></div></div>
+  </div>
+
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr 1fr">
+    <div class="card"><h3>Referrers</h3><div class="rank" id="rRef"></div></div>
+    <div class="card"><h3>Cities</h3><div class="rank" id="rCity"></div></div>
+    <div class="card"><h3>Devices &amp; browsers</h3><div class="rank" id="rDevice"></div></div>
+    <div class="card"><h3>Campaigns (UTM)</h3><div class="rank" id="rUtm"></div></div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th>Time</th><th>Type</th><th>Page</th><th>Target / clicked URL</th><th>Source</th><th>Referrer</th><th>Country</th><th>City</th>
+        <th>IP</th><th>Network</th><th>Device</th><th>Browser</th><th>OS</th><th>Lang</th><th>Timezone</th>
+        <th>Screen</th><th>Time on page</th><th>Scroll</th><th>Visitor</th><th>Session</th><th>Campaign</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>No events for these filters yet.</div>
+  </div>
+</main>
+<script>
+var ALL = [], FILTERED = [];
+var state = { bots: false, viewsOnly: true };
+var $ = function (id) { return document.getElementById(id); };
+var fmtInt = function (n) { return n.toLocaleString(); };
+
+function today(offset) {
+  var d = new Date();
+  d.setDate(d.getDate() + (offset || 0));
+  return d.toISOString().slice(0, 10);
+}
+function initDates() {
+  if (!$('from').value) $('from').value = today(-29);
+  if (!$('to').value) $('to').value = today(0);
+}
+function tagClass(s) {
+  s = (s || '').toLowerCase();
+  if (s.indexOf('ai') === 0) return 'tag ai';
+  if (s === 'search') return 'tag search';
+  if (s === 'social') return 'tag social';
+  if (s === 'direct') return 'tag direct';
+  return 'tag';
+}
+function host(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (_) { return u ? u.slice(0, 40) : 'â€”'; } }
+function dur(ms) {
+  if (!ms) return '';
+  var s = Math.round(ms / 1000);
+  return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's';
+}
+function fillSelect(el, values) {
+  var cur = el.value;
+  el.innerHTML = '<option value="">All</option>' + values.map(function (v) {
+    return '<option value="' + v.replace(/"/g, '&quot;') + '">' + v + '</option>';
+  }).join('');
+  el.value = cur;
+}
+function uniq(rows, key) {
+  var set = {};
+  rows.forEach(function (r) { if (r[key]) set[r[key]] = 1; });
+  return Object.keys(set).sort();
+}
+function rank(el, rows, keyFn, limit) {
+  var counts = {};
+  rows.forEach(function (r) {
+    var k = keyFn(r);
+    if (!k) return;
+    counts[k] = (counts[k] || 0) + 1;
+  });
+  var list = Object.keys(counts).map(function (k) { return [k, counts[k]]; })
+    .sort(function (a, b) { return b[1] - a[1]; }).slice(0, limit || 8);
+  el.innerHTML = list.length ? list.map(function (p) {
+    return '<div><span title="' + p[0] + '">' + p[0] + '</span><b>' + fmtInt(p[1]) + '</b></div>';
+  }).join('') : '<div class="muted">No data</div>';
+}
+function applyFilters() {
+  var c = $('country').value, ci = $('city').value, s = $('source').value, pg = $('page').value,
+      dv = $('device').value, q = $('q').value.trim().toLowerCase();
+  FILTERED = ALL.filter(function (r) {
+    if (!state.bots && r.bot) return false;
+    if (state.viewsOnly && r.type !== 'pageview') return false;
+    if (c && r.country !== c) return false;
+    if (ci && r.city !== ci) return false;
+    if (s && r.source !== s) return false;
+    if (pg && r.path !== pg) return false;
+    if (dv && r.device !== dv) return false;
+    if (q) {
+      var hay = [r.ip, r.referrer, r.city, r.country, r.ua, r.path, r.targetUrl, r.org, r.utmCampaign, r.visitorId].join(' ').toLowerCase();
+      if (hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+  render();
+}
+function render() {
+  var rows = FILTERED;
+  var visitors = {}, sessions = {}, countries = {};
+  var totalDur = 0, durCount = 0;
+  rows.forEach(function (r) {
+    if (r.visitorId) visitors[r.visitorId] = 1;
+    if (r.sessionId) sessions[r.sessionId] = 1;
+    if (r.country) countries[r.country] = 1;
+  });
+  ALL.forEach(function (r) {
+    if (r.type === 'engagement' && r.durationMs) { totalDur += r.durationMs; durCount++; }
+  });
+  var kpis = [
+    ['Pageviews', fmtInt(rows.filter(function (r) { return r.type === 'pageview'; }).length)],
+    ['Unique visitors', fmtInt(Object.keys(visitors).length)],
+    ['Sessions', fmtInt(Object.keys(sessions).length)],
+    ['Countries', fmtInt(Object.keys(countries).length)],
+    ['Avg. time on page', durCount ? dur(totalDur / durCount) : '—'],
+    ['Events (all types)', fmtInt(rows.length)]
+  ];
+  $('kpis').innerHTML = kpis.map(function (k) {
+    return '<div class="kpi"><b>' + k[1] + '</b><span>' + k[0] + '</span></div>';
+  }).join('');
+
+  var byDay = {};
+  rows.forEach(function (r) {
+    var d = (r.ts || '').slice(0, 10);
+    if (d) byDay[d] = (byDay[d] || 0) + 1;
+  });
+  var days = Object.keys(byDay).sort();
+  var max = Math.max.apply(null, days.map(function (d) { return byDay[d]; }).concat([1]));
+  $('spark').innerHTML = days.length ? days.map(function (d) {
+    return '<div style="height:' + Math.max(2, (byDay[d] / max) * 100) + '%" data-t="' + d + ': ' + byDay[d] + '"></div>';
+  }).join('') : '<div class="muted" style="align-self:center">No data</div>';
+
+  rank($('rSource'), rows, function (r) { return r.source; });
+  rank($('rCountry'), rows, function (r) { return r.country; });
+  rank($('rPage'), rows, function (r) { return r.path; });
+  rank($('rRef'), rows, function (r) { return r.referrer ? host(r.referrer) : null; });
+  rank($('rCity'), rows, function (r) { return r.city ? r.city + (r.country ? ', ' + r.country : '') : null; });
+  rank($('rDevice'), rows, function (r) { return r.device + ' · ' + r.browser; });
+  rank($('rUtm'), rows, function (r) { return r.utmCampaign ? r.utmCampaign + ' (' + (r.utmSource || '—') + ')' : null; });
+
+  var list = rows.slice().sort(function (a, b) { return (b.ts || '').localeCompare(a.ts || ''); }).slice(0, 1500);
+  $('rows').innerHTML = list.map(function (r) {
+    return '<tr>' +
+      '<td>' + (r.ts || '').replace('T', ' ').slice(0, 19) + '</td>' +
+      '<td>' + (r.type || '') + (r.bot ? ' <span class="tag">bot</span>' : '') + '</td>' +
+      '<td class="wrap">' + (r.path || '') + '</td>' +
+      '<td class="wrap">' + (r.targetUrl ? '<a href="' + r.targetUrl + '" target="_blank" rel="noopener" title="' + r.targetUrl + '">' + host(r.targetUrl) + '</a>' : '<span class="muted">—</span>') + '</td>' +
+      '<td><span class="' + tagClass(r.source) + '">' + (r.source || '') + '</span></td>' +
+      '<td class="wrap">' + (r.referrer ? '<span title="' + r.referrer + '">' + host(r.referrer) + '</span>' : '<span class="muted">—</span>') + '</td>' +
+      '<td>' + (r.country || '') + '</td><td>' + (r.city || '') + '</td>' +
+      '<td>' + (r.ip || '') + '</td><td class="wrap">' + (r.org || '') + '</td>' +
+      '<td>' + (r.device || '') + '</td><td>' + (r.browser || '') + '</td><td>' + (r.os || '') + '</td>' +
+      '<td>' + (r.lang || '') + '</td><td>' + (r.tz || r.tzServer || '') + '</td><td>' + (r.screen || '') + '</td>' +
+      '<td>' + dur(r.durationMs) + '</td><td>' + (r.scrollPct ? r.scrollPct + '%' : '') + '</td>' +
+      '<td class="muted">' + (r.visitorId || '').slice(0, 8) + '</td>' +
+      '<td class="muted">' + (r.sessionId || '').slice(0, 8) + '</td>' +
+      '<td>' + [r.utmSource, r.utmMedium, r.utmCampaign].filter(Boolean).join(' / ') + '</td>' +
+      '</tr>';
+  }).join('');
+  $('empty').hidden = list.length > 0;
+  $('live').textContent = fmtInt(rows.length) + ' events · updated ' + new Date().toLocaleTimeString();
+}
+function load() {
+  initDates();
+  var url = '/api/visitors.json?from=' + $('from').value + '&to=' + $('to').value;
+  fetch(url, { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      ALL = d.rows || [];
+      $('empty').innerHTML = 'No events for these filters yet.';
+      fillSelect($('country'), uniq(ALL, 'country'));
+      fillSelect($('city'), uniq(ALL, 'city'));
+      fillSelect($('source'), uniq(ALL, 'source'));
+      fillSelect($('page'), uniq(ALL, 'path'));
+      fillSelect($('device'), uniq(ALL, 'device'));
+      applyFilters();
+    })
+    .catch(function () {
+      $('live').textContent = 'Could not load data';
+      $('rows').innerHTML = '';
+      $('kpis').innerHTML = '';
+      var box = $('empty');
+      box.hidden = false;
+      box.innerHTML = '<strong>Could not load visitor data.</strong><br>' +
+        'This dashboard only works on the deployed site, and needs <code>ADMIN_PASS</code> set in the environment. ' +
+        'If you are signed in and still see this, check the server logs.';
+    });
+}
+['country','city','source','page','device'].forEach(function (id) { $(id).addEventListener('change', applyFilters); });
+$('q').addEventListener('input', applyFilters);
+['from','to'].forEach(function (id) { $(id).addEventListener('change', load); });
+$('bots').addEventListener('click', function () { state.bots = !state.bots; this.classList.toggle('on', state.bots); applyFilters(); });
+$('views').addEventListener('click', function () { state.viewsOnly = !state.viewsOnly; this.classList.toggle('on', state.viewsOnly); applyFilters(); });
+$('reset').addEventListener('click', function () {
+  ['country','city','source','page','device'].forEach(function (id) { $(id).value = ''; });
+  $('q').value = '';
+  $('from').value = today(-29); $('to').value = today(0);
+  state = { bots: false, viewsOnly: true };
+  $('bots').classList.remove('on'); $('views').classList.add('on');
+  load();
+});
+$('csv').addEventListener('click', function () {
+  var cols = ['ts','type','path','title','targetUrl','source','referrer','country','city','region','ip','org','device','browser','os','lang','tz','screen','viewport','durationMs','scrollPct','visitorId','sessionId','newVisitor','utmSource','utmMedium','utmCampaign','bot','ua'];
+  var cell = function (v) {
+    var s = v == null ? '' : String(v);
+    return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  var csv = '\uFEFF' + [cols.join(',')].concat(FILTERED.map(function (r) {
+    return cols.map(function (c) { return cell(r[c]); }).join(',');
+  })).join('\r\n');
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'triplei-visitors-' + $('from').value + '_to_' + $('to').value + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>

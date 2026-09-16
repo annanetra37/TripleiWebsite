@@ -1,0 +1,12 @@
+{
+  "name": "triplei-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Triple I — 100% AI-powered ESG reporting. Static marketing site (multi-page, SEO-friendly).",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
