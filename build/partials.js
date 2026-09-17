@@ -228,7 +228,7 @@ function homeBody() {
 </div></section>
 
 <div class="container" style="padding-top:var(--section-y)">
-  <div class="card ink stack-md" style="display:grid;grid-template-columns:1fr auto;gap:var(--space-8);align-items:center;border-radius:var(--radius-2xl);padding:clamp(28px,4vw,48px)">
+  <div class="card ink stack-md cta-band">
     <div class="stack" style="gap:14px;align-items:flex-start">
       <span class="eyebrow" style="color:var(--green-300)">Don&rsquo;t Know Where to Start?</span>
       <h2 class="h1" style="color:#fff">Take Triple I&rsquo;s ESG Needs Assessment Test</h2>
@@ -266,7 +266,7 @@ function homeBody() {
 </section>
 
 <section class="container section">
-  <div class="stack-md" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center">
+  <div class="stack-md split-2">
     <div class="stack" style="gap:var(--space-5);align-items:flex-start">
       <span class="eyebrow">Why Choose Us?</span>
       <h2 class="h1">A paradigm shift in sustainability management</h2>
@@ -274,12 +274,12 @@ function homeBody() {
       <a class="btn btn-primary btn-lg" href="/contact">Request a demo</a>
     </div>
     <div class="compare" style="border-radius:var(--radius-xl)">
-      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr">
+      <div class="cmp-row">
         <div></div>
         <div style="padding:18px 12px;text-align:center;font-size:var(--fs-sm);font-weight:700;color:var(--text-muted);border-left:1px solid var(--border-subtle)">Other Companies</div>
         <div style="padding:18px 12px;text-align:center;font-size:var(--fs-sm);font-weight:800;color:var(--brand-press);background:var(--green-50)">Triple I</div>
       </div>
-      ${compareRows.map(r => `<div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;border-top:1px solid var(--border-subtle)"><div style="padding:15px 22px;font-size:var(--fs-sm);font-weight:600">${r}</div><div style="padding:15px 12px;display:flex;justify-content:center;border-left:1px solid var(--border-subtle)">${cross}</div><div style="padding:15px 12px;display:flex;justify-content:center;background:var(--green-50)">${check()}</div></div>`).join('\n      ')}
+      ${compareRows.map(r => `<div class="cmp-row bordered"><div style="padding:15px 22px;font-size:var(--fs-sm);font-weight:600">${r}</div><div style="padding:15px 12px;display:flex;justify-content:center;border-left:1px solid var(--border-subtle)">${cross}</div><div style="padding:15px 12px;display:flex;justify-content:center;background:var(--green-50)">${check()}</div></div>`).join('\n      ')}
     </div>
   </div>
 </section>
@@ -304,7 +304,7 @@ function homeBody() {
   <div class="cert-strip">${certs.map(c=>`<img src="${c.src}" alt="ESG certification" loading="lazy">`).join('')}</div>
 </section>
 
-<section class="bg-subtle"><div class="container section" style="display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--space-12);align-items:start" data-faq-wrap>
+<section class="bg-subtle"><div class="container section faq-split" data-faq-wrap>
   <div class="stack" style="gap:var(--space-5);align-items:flex-start;position:sticky;top:100px">
     <span class="eyebrow">FAQ</span>
     <h2 class="h1">Any Questions? We&rsquo;ve Got you Covered</h2>
@@ -456,7 +456,7 @@ function aboutBody() {
 </div></section>
 
 <section class="container section">
-  <div class="stack-md" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center">
+  <div class="stack-md split-2 gap-12">
     <h2 class="h2">Powered by our core platform, EcoHub&trade;, Triple I automates the transformation of raw ESG data into compliance-ready reports.</h2>
     <p class="lead">We&rsquo;re not just building ESG software. We&rsquo;re helping organizations lead with clarity, meet regulatory expectations, and build a competitive edge through responsible reporting &mdash; across emissions, HR, and governance.</p>
   </div>
@@ -477,7 +477,7 @@ function aboutBody() {
 <section class="bg-subtle"><div class="container section">
   <div class="section-head center"><span class="eyebrow center">Our Mission</span><h2 class="h1" style="margin-top:12px">What drives us every day</h2></div>
   <div class="stack" style="gap:var(--space-8)">
-    ${mission.map(([im,t,b],i) => `<div class="stack-md mission-row" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center"><img src="${im}" alt="" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);order:${i%2?2:1}"><div class="stack" style="gap:var(--space-4);order:${i%2?1:2}"><h3 class="h2">${t}</h3><p class="lead">${b}</p></div></div>`).join('\n    ')}
+    ${mission.map(([im,t,b],i) => `<div class="stack-md mission-row split-2 gap-12"><img src="${im}" alt="" loading="lazy" style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);order:${i%2?2:1}"><div class="stack" style="gap:var(--space-4);order:${i%2?1:2}"><h3 class="h2">${t}</h3><p class="lead">${b}</p></div></div>`).join('\n    ')}
   </div>
 </div></section>
 
@@ -546,7 +546,7 @@ function contactBody() {
   const points = ['A 30-minute personalized walkthrough of EcoHub','A tailored ESG needs assessment for your organization','Answers on frameworks, data sources & pricing'];
   return `
 <section class="bg-hero"><div class="container" style="padding-top:clamp(48px,5vw,80px);padding-bottom:var(--space-12)">
-  <div class="stack-md" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start">
+  <div class="stack-md split-2 align-start">
     <div class="stack" style="gap:var(--space-5);align-items:flex-start;padding-top:var(--space-6)">
       <span class="eyebrow">Contact us</span>
       <h1 class="display">Request a demo</h1>
