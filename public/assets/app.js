@@ -94,15 +94,9 @@
     // iOS needs these as properties too before a programmatic play().
     v.muted = true;
     v.playsInline = true;
-    // If a clip cannot be decoded or fetched, collapse its frame rather than
-    // leaving an empty tinted box on the page. preload starts before this
-    // script runs, so check for an error that already happened as well.
-    var fail = function(){
-      var box = v.closest ? v.closest('.tl-media') : v.parentNode;
-      if (box) box.classList.add('is-unavailable');
-    };
-    v.addEventListener('error', fail);
-    if (v.error || v.networkState === 3 /* NETWORK_NO_SOURCE */) fail();
+    // Each clip carries a poster, so if playback is refused (Low Power Mode,
+    // Safari's autoplay setting) the first frame stays on screen by itself.
+    // Nothing to hide and nothing to fall back to.
     io.observe(v);
   });
 })();

@@ -996,5 +996,6 @@ html{overscroll-behavior:none;background:var(--white)}
   .sector{padding:var(--space-5);gap:var(--space-4)}
 }
 
-/* A step clip that cannot load collapses instead of leaving an empty box. */
-.tl-media.is-unavailable{display:none}
+/* The poster fills the frame identically to the video, so the section looks
+   the same whether or not the clip is allowed to play. */
+.tl-media video{background:var(--green-50)}
