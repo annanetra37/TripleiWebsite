@@ -392,6 +392,19 @@ function route_(req, res) {
   const urlObj = new URL(req.url, 'http://localhost');
   const route = urlObj.pathname.replace(/\/$/, '') || '/';
 
+  // Pages are served at extensionless paths and reference their assets
+  // relatively ("assets/styles.css"). On a trailing-slash URL the browser
+  // resolves those against /page/ instead of /, so every asset 404s and the
+  // page renders unstyled. Redirect to the canonical path instead.
+  if ((req.method === 'GET' || req.method === 'HEAD') &&
+      urlObj.pathname.length > 1 && urlObj.pathname.endsWith('/')) {
+    return send(res, 301, '', {
+      Location: route + urlObj.search,
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'no-store',
+    });
+  }
+
   if (req.method === 'POST' && route === '/api/submit') {
     return handleSubmit(req, res);
   }

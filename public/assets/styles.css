@@ -290,7 +290,7 @@ button{font:inherit;cursor:pointer}
   .tl-copy,.tl-row.flip .tl-copy{grid-column:2;grid-row:1;text-align:left;align-items:flex-start;margin-left:0}
   .tl-media,.tl-row.flip .tl-media{grid-column:2;grid-row:2;aspect-ratio:16/9}
   .tl-num{width:56px;height:56px;font-size:1.5rem;box-shadow:0 0 0 6px var(--ink-50)}
-}6/9}}
+}
 
 /* ---- Compare table ---- */
 .compare{background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm)}
@@ -914,3 +914,76 @@ button{font:inherit;cursor:pointer}
   to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   .hero-media .video-frame{animation:none}}
+
+/* ============================================================
+   Responsive layout primitives
+   These replace inline `style="display:grid;grid-template-columns:…"`
+   attributes, which media queries cannot override. Keep layout here.
+   ============================================================ */
+
+/* Two equal columns -> stacked on tablet and below. */
+.split-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--space-16);align-items:center}
+.split-2.align-start{align-items:start}
+.split-2.gap-12{gap:var(--space-12)}
+
+/* Copy on the left, a fixed-width action on the right (CTA bands). */
+.cta-band{display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:var(--space-8);align-items:center;
+  border-radius:var(--radius-2xl);padding:clamp(24px,4vw,56px)}
+.cta-band .cta-band-title{font-size:clamp(1.6rem,1.1rem + 2.2vw,2.75rem);
+  font-weight:600;line-height:var(--lh-snug);text-wrap:pretty}
+
+/* FAQ: intro column + accordion column. */
+.faq-split{display:grid;grid-template-columns:.8fr 1.2fr;
+  gap:var(--space-12);align-items:start}
+
+@media (max-width:860px){
+  .split-2,.split-2.gap-12{grid-template-columns:minmax(0,1fr);gap:var(--space-10)}
+}
+@media (max-width:900px){
+  .faq-split{grid-template-columns:minmax(0,1fr);gap:var(--space-8)}
+}
+@media (max-width:760px){
+  .cta-band{grid-template-columns:minmax(0,1fr);gap:var(--space-6);text-align:left}
+  .cta-band>.stack{align-items:stretch}
+  .cta-band .btn{width:100%;justify-content:center}
+}
+
+/* ---- Accordion: keep long questions inside the viewport ---- */
+@media (max-width:560px){
+  .acc-q{padding:16px 18px;gap:12px}
+  .acc-q span:first-child{font-size:var(--fs-md);min-width:0;overflow-wrap:break-word}
+  .acc-a,.acc-item.open .acc-a{padding-inline:18px}
+  .acc-item.open .acc-a{max-height:520px}
+}
+
+/* ---- Compare table on narrow screens ---- */
+.cmp-row{display:grid;grid-template-columns:1.6fr 1fr 1fr}
+.cmp-row + .cmp-row,.cmp-row.bordered{border-top:1px solid var(--border-subtle)}
+@media (max-width:560px){
+  .cmp-row{grid-template-columns:1.35fr 1fr 1fr}
+  .cmp-row>div:first-child{padding-inline:14px!important}
+  .cmp-row>div{padding-block:12px!important;font-size:var(--fs-xs)!important}
+}
+
+/* ---- Global overflow guards ----
+   A single runaway child used to make the whole page scroll sideways. */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas,iframe{max-width:100%}
+
+/* ---- Very small screens (iPhone SE & older Androids, <=360px) ----
+   Grid/flex children default to min-width:auto, so one nowrap button or a
+   long heading word can push the whole page sideways. Let them shrink. */
+@media (max-width:360px){
+  :root{
+    --fs-display:clamp(2rem,1.1rem + 3.4vw,4.5rem);
+    --fs-h1:clamp(1.75rem,1.1rem + 2.4vw,3.25rem);
+    --gutter:16px;
+  }
+  .display,.h1,.h2,h1,h2,h3{overflow-wrap:break-word}
+  .split-2>*,.faq-split>*,.cta-band>*,.cta-card>*,.sector{min-width:0}
+  .btn{white-space:normal;text-align:center}
+  .cta-band{padding:22px 18px}
+  .sector{padding:var(--space-5);gap:var(--space-4)}
+}
