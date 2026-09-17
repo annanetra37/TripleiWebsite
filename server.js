@@ -29,7 +29,18 @@ const MIME = {
   '.txt': 'text/plain; charset=utf-8',
   '.xml': 'application/xml; charset=utf-8',
   '.woff2': 'font/woff2',
+  '.woff': 'font/woff',
+  '.avif': 'image/avif',
+  '.gif': 'image/gif',
+  '.mp4': 'video/mp4',
+  '.m4v': 'video/mp4',
+  '.webm': 'video/webm',
+  '.mov': 'video/quicktime',
+  '.pdf': 'application/pdf',
 };
+
+// Media types that browsers fetch with a Range request before playing.
+const RANGEABLE = new Set(['.mp4', '.m4v', '.webm', '.mov', '.pdf']);
 
 function send(res, status, body, headers) {
   res.writeHead(status, Object.assign({
@@ -446,8 +457,65 @@ function route_(req, res) {
     ? 'public, max-age=0, must-revalidate'
     : 'public, max-age=604800, stale-while-revalidate=86400';
 
+  // Media needs byte-range support: Safari (and iOS in particular) probes a
+  // video with `Range: bytes=0-1` and refuses to play it at all unless the
+  // server answers 206 with Content-Range. Serving 200 + the whole file is
+  // why the step videos rendered as empty boxes on iPhone.
+  if (RANGEABLE.has(ext)) {
+    return sendRangeable(req, res, file, type, cache);
+  }
+
   const body = req.method === 'HEAD' ? '' : fs.readFileSync(file);
   send(res, 200, body, { 'Content-Type': type, 'Cache-Control': cache });
+}
+
+// Serve a file with HTTP range support, streaming rather than buffering.
+function sendRangeable(req, res, file, type, cache) {
+  let size;
+  try { size = fs.statSync(file).size; }
+  catch (_) { return send(res, 404, 'Not Found', { 'Content-Type': 'text/plain' }); }
+
+  const base = {
+    'Content-Type': type,
+    'Cache-Control': cache,
+    'Accept-Ranges': 'bytes',
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'SAMEORIGIN',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+  };
+
+  const range = req.headers.range;
+  const m = range ? /^bytes=(\d*)-(\d*)$/.exec(String(range).trim()) : null;
+
+  if (!m) {
+    res.writeHead(200, Object.assign({ 'Content-Length': size }, base));
+    if (req.method === 'HEAD') return res.end();
+    return fs.createReadStream(file).on('error', () => res.destroy()).pipe(res);
+  }
+
+  // "bytes=-500" means the final 500 bytes; otherwise start[-end], end optional.
+  let start, end;
+  if (m[1] === '') {
+    const suffix = parseInt(m[2], 10);
+    if (!suffix) { res.writeHead(416, Object.assign({ 'Content-Range': 'bytes */' + size }, base)); return res.end(); }
+    start = Math.max(0, size - suffix);
+    end = size - 1;
+  } else {
+    start = parseInt(m[1], 10);
+    end = m[2] === '' ? size - 1 : Math.min(parseInt(m[2], 10), size - 1);
+  }
+
+  if (!(start >= 0 && end >= start && start < size)) {
+    res.writeHead(416, Object.assign({ 'Content-Range': 'bytes */' + size }, base));
+    return res.end();
+  }
+
+  res.writeHead(206, Object.assign({
+    'Content-Range': 'bytes ' + start + '-' + end + '/' + size,
+    'Content-Length': end - start + 1,
+  }, base));
+  if (req.method === 'HEAD') return res.end();
+  fs.createReadStream(file, { start: start, end: end }).on('error', () => res.destroy()).pipe(res);
 }
 
 server.listen(PORT, () => {

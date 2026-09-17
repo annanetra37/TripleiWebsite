@@ -90,7 +90,21 @@
       else { v.pause(); }
     });
   }, { threshold: 0.35 });
-  vids.forEach(function(v){ io.observe(v); });
+  vids.forEach(function(v){
+    // iOS needs these as properties too before a programmatic play().
+    v.muted = true;
+    v.playsInline = true;
+    // If a clip cannot be decoded or fetched, collapse its frame rather than
+    // leaving an empty tinted box on the page. preload starts before this
+    // script runs, so check for an error that already happened as well.
+    var fail = function(){
+      var box = v.closest ? v.closest('.tl-media') : v.parentNode;
+      if (box) box.classList.add('is-unavailable');
+    };
+    v.addEventListener('error', fail);
+    if (v.error || v.networkState === 3 /* NETWORK_NO_SOURCE */) fail();
+    io.observe(v);
+  });
 })();
 
 

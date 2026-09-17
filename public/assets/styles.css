@@ -968,9 +968,17 @@ button{font:inherit;cursor:pointer}
 }
 
 /* ---- Global overflow guards ----
-   A single runaway child used to make the whole page scroll sideways. */
-html,body{max-width:100%;overflow-x:hidden}
+   A single runaway child used to make the whole page scroll sideways.
+   Use `clip`, never `hidden`: `hidden` turns the root into a scroll
+   container, which silently disables the sticky site header. `clip` gives
+   the same protection with no scroll container. Browsers without `clip`
+   simply get no guard, which is fine because no layout overflows now. */
+html,body{max-width:100%;overflow-x:clip}
 img,svg,video,canvas,iframe{max-width:100%}
+
+/* Stop the page rubber-banding past its own edges on iOS, so it no longer
+   feels like it is floating over a blank background. */
+html{overscroll-behavior:none;background:var(--white)}
 
 /* ---- Very small screens (iPhone SE & older Androids, <=360px) ----
    Grid/flex children default to min-width:auto, so one nowrap button or a
@@ -987,3 +995,6 @@ img,svg,video,canvas,iframe{max-width:100%}
   .cta-band{padding:22px 18px}
   .sector{padding:var(--space-5);gap:var(--space-4)}
 }
+
+/* A step clip that cannot load collapses instead of leaving an empty box. */
+.tl-media.is-unavailable{display:none}
