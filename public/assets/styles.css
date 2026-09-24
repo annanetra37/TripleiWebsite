@@ -39,6 +39,7 @@
   --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
   --section-y:clamp(64px,5vw,120px);
   --radius-sm:10px; --radius-md:14px; --radius-lg:20px; --radius-xl:28px; --radius-2xl:36px; --radius-pill:999px;
+  --header-h:74px;
   --container:1200px; --gutter:clamp(20px,4vw,48px);
 
   --shadow-sm:0 2px 6px rgba(14,26,17,.06),0 1px 2px rgba(14,26,17,.04);
@@ -152,6 +153,12 @@ button{font:inherit;cursor:pointer}
 .nav-cta .login{font-size:var(--fs-sm);font-weight:600;color:var(--text-strong)}
 .nav-toggle{display:none;background:none;border:none;padding:8px}
 .mobile-menu{display:none;border-top:1px solid var(--border-subtle);background:#fff;padding:12px var(--gutter) 20px}
+/* The drawer lives inside the sticky header and is taller than a phone
+   screen, so it has to scroll itself: without a cap its lower links sit
+   below the fold with no way to reach them. dvh tracks Safari's
+   collapsing toolbars; vh is the fallback for older browsers. */
+.mobile-menu.open{max-height:calc(100vh - var(--header-h));max-height:calc(100dvh - var(--header-h));
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:12px 4px;font-weight:600;color:var(--text-body);border-bottom:1px solid var(--border-subtle)}
 .mobile-menu .row{display:flex;gap:12px;margin-top:16px}
@@ -941,8 +948,12 @@ button{font:inherit;cursor:pointer}
 @media (max-width:860px){
   .split-2,.split-2.gap-12{grid-template-columns:minmax(0,1fr);gap:var(--space-10)}
 }
+/* Sticky only while the intro has a column of its own. Once the grid
+   stacks, a sticky intro detaches and floats over the accordion below it. */
+.faq-intro{position:sticky;top:100px}
 @media (max-width:900px){
   .faq-split{grid-template-columns:minmax(0,1fr);gap:var(--space-8)}
+  .faq-intro{position:static;top:auto}
 }
 @media (max-width:760px){
   .cta-band{grid-template-columns:minmax(0,1fr);gap:var(--space-6);text-align:left}

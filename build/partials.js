@@ -303,7 +303,7 @@ function homeBody() {
 </section>
 
 <section class="bg-subtle"><div class="container section faq-split" data-faq-wrap>
-  <div class="stack" style="gap:var(--space-5);align-items:flex-start;position:sticky;top:100px">
+  <div class="stack faq-intro" style="gap:var(--space-5);align-items:flex-start">
     <span class="eyebrow">FAQ</span>
     <h2 class="h1">Any Questions? We&rsquo;ve Got you Covered</h2>
     <p class="muted" style="line-height:var(--lh-relaxed)">Our platform automates every step of the ESG journey &mdash; from data ingestion and classification to framework alignment, reporting, and insight generation.</p>
