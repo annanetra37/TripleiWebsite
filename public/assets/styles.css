@@ -162,10 +162,17 @@ button{font:inherit;cursor:pointer}
 .mobile-menu.open{display:block;position:fixed;top:0;right:0;bottom:0;left:0;z-index:40;
   width:auto;height:auto;max-height:none;background:#fff;
   overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
-  padding:calc(var(--header-h, 74px) + 8px) var(--gutter) max(32px,env(safe-area-inset-bottom))}
-/* The row holding Log in / Request a demo is the last thing in the drawer;
-   keep it clear of the home indicator so it is never half off-screen. */
-.mobile-menu.open .row{padding-bottom:8px}
+  padding:calc(var(--header-h, 74px) + 8px) var(--gutter) 0}
+/* Log in and Request a demo are the header's two buttons, which the mobile
+   breakpoint hides. Their copies are the last thing in the drawer, ~950px
+   down behind 18 links, so in practice they were invisible. Stick the row
+   to the bottom of the scroller: it is on screen the moment the menu opens
+   and stays there while the list scrolls behind it. */
+.mobile-menu.open .row{position:sticky;bottom:0;z-index:1;
+  margin:20px calc(var(--gutter) * -1) 0;
+  padding:14px var(--gutter) max(14px,env(safe-area-inset-bottom));
+  background:#fff;border-top:1px solid var(--border-subtle)}
+.mobile-menu.open .row .btn{flex:1 1 0;min-width:0}
 
 /* Freeze the page while the drawer is open. Fixing the body is what
    actually stops iOS handing the gesture to the document; the JS keeps the
