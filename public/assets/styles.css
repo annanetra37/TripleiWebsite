@@ -455,7 +455,7 @@ body.nav-open .site-header{position:fixed;top:0;left:0;right:0;z-index:50;
 }
 @media (max-width:1024px){
   .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
-  .nav-links,.nav-cta{display:none}
+  .nav-links{display:none}
   .nav-toggle{display:inline-flex}
   .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
   .cta-card,.compare .thead,.compare .trow{grid-template-columns:1fr}
@@ -1035,3 +1035,42 @@ html{overscroll-behavior:none;background:var(--white)}
 /* The poster fills the frame identically to the video, so the section looks
    the same whether or not the clip is allowed to play. */
 .tl-media video{background:var(--green-50)}
+
+
+/* ---- Header call-to-action on mobile ----
+   Log in and Request a demo belong in the bar itself, as they are on
+   desktop, not only inside the drawer. Space is tight next to the logo and
+   the burger, so the pair compacts in stages as the screen narrows. */
+@media (max-width:1024px){
+  .nav-cta{display:flex;gap:10px;align-items:center;min-width:0;flex:0 1 auto}
+  .nav-cta .btn{padding:10px 14px;font-size:.82rem;min-height:40px}
+  .nav-cta .login{font-size:.82rem;display:inline-flex;align-items:center;min-height:40px}
+  .nav-inner{gap:10px}
+  /* The brand and the burger keep their size; only the CTA may shrink,
+     otherwise flex squeezes the burger down to an untappable sliver. */
+  .site-header .logo{flex:0 0 auto;min-width:0}
+  .nav-toggle{flex:0 0 auto}
+}
+@media (max-width:560px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding:10px 12px;font-size:.78rem;min-height:40px}
+  .nav-cta .login{font-size:.78rem}
+  .site-header .logo{font-size:17px;gap:7px}
+  .site-header .logo img{height:30px!important}
+  .nav-inner{gap:8px;height:64px}
+  .nav-toggle{padding:8px 0 8px 4px}
+}
+/* Below this the bar cannot hold both: the text link steps aside and the
+   primary button stays. Log in is still in the drawer, pinned to its foot. */
+@media (max-width:359px){
+  .nav-cta .login{display:none}
+}
+@media (max-width:409px){
+  /* Through the common iPhone widths the bar cannot hold the wordmark and
+     both buttons without them crowding the burger. The buttons are what
+     was asked for, so the wordmark steps aside and the brand mark carries
+     the header; it still links home. */
+  .site-header .logo{gap:0;font-size:0;letter-spacing:0;word-spacing:0}
+  .site-header .logo img{margin-right:0}
+  .nav-cta .btn{padding:10px 11px;font-size:.75rem;min-height:40px}
+}
