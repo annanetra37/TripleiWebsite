@@ -12,14 +12,66 @@
     onScroll();
   }
 
-  // Mobile menu toggle
+  // Mobile menu toggle.
+  // The drawer is pinned to the viewport and the page is frozen while it is
+  // open, otherwise a drag over the menu scrolls the document behind it.
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.mobile-menu');
+  var header = document.querySelector('.site-header');
   if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      var open = menu.classList.toggle('open');
+    var scrollY = 0;
+
+    // The drawer is positioned under the header, so publish its real height
+    // rather than trusting a hard-coded one.
+    var syncHeaderHeight = function () {
+      var h = header ? Math.round(header.getBoundingClientRect().height) : 74;
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+    };
+
+    var setOpen = function (open) {
+      if (open) {
+        syncHeaderHeight();
+        scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        menu.classList.add('open');
+        document.documentElement.classList.add('nav-open');
+        document.body.classList.add('nav-open');
+        document.body.style.top = (-scrollY) + 'px';
+      } else {
+        menu.classList.remove('open');
+        document.documentElement.classList.remove('nav-open');
+        document.body.classList.remove('nav-open');
+        document.body.style.top = '';
+        // Restoring must not animate, or the page visibly flies back.
+        var behavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollY);
+        document.documentElement.style.scrollBehavior = behavior;
+      }
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    toggle.addEventListener('click', function () {
+      setOpen(!menu.classList.contains('open'));
     });
+
+    // Tapping a link navigates away, but an in-page anchor would otherwise
+    // leave the page frozen.
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
+    });
+
+    // Rotating or resizing up to the desktop nav must release the freeze.
+    window.addEventListener('resize', function () {
+      if (!menu.classList.contains('open')) return;
+      if (window.innerWidth > 1024) setOpen(false);
+      else syncHeaderHeight();
+    });
+
+    syncHeaderHeight();
   }
 
   // FAQ accordions
