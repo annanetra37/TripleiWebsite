@@ -159,17 +159,23 @@ button{font:inherit;cursor:pointer}
    paints over the drawer's top strip and its close button stays tappable.
    --header-h only pads the first link clear of the header; if it were ever
    wrong the spacing would be off but the page still could not show. */
-.mobile-menu.open{display:block;position:fixed;top:0;right:0;bottom:0;left:0;z-index:40;
-  width:auto;height:auto;max-height:none;background:#fff;
-  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
-  padding:calc(var(--header-h, 74px) + 8px) var(--gutter) 0}
+.mobile-menu.open{display:flex;flex-direction:column;position:fixed;top:0;right:0;bottom:0;left:0;
+  z-index:40;width:auto;height:auto;max-height:none;background:#fff;overflow:hidden;
+  padding:calc(var(--header-h, 74px) + 8px) 0 0}
+/* The links scroll; the button row is a sibling footer, not a child of the
+   scroller. It was sticky inside it before, which Chromium honours but iOS
+   Safari does not when the scroller also carries
+   -webkit-overflow-scrolling:touch - there sticky is dropped and the row
+   falls to the end of the scrolled content, out of sight. A flex footer
+   cannot be affected by how the list scrolls. */
+.mobile-menu-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  padding:0 var(--gutter)}
 /* Log in and Request a demo are the header's two buttons, which the mobile
    breakpoint hides. Their copies are the last thing in the drawer, ~950px
    down behind 18 links, so in practice they were invisible. Stick the row
    to the bottom of the scroller: it is on screen the moment the menu opens
    and stays there while the list scrolls behind it. */
-.mobile-menu.open .row{position:sticky;bottom:0;z-index:1;
-  margin:20px calc(var(--gutter) * -1) 0;
+.mobile-menu.open .row{flex:0 0 auto;margin:0;
   padding:14px var(--gutter) max(14px,env(safe-area-inset-bottom));
   background:#fff;border-top:1px solid var(--border-subtle)}
 .mobile-menu.open .row .btn{flex:1 1 0;min-width:0}
