@@ -52,7 +52,9 @@ function header(active) {
     </button>
   </div>
   <div class="mobile-menu">
+    <div class="mobile-menu-scroll">
     ${NAV.map(([l,h]) => `<a href="${h}">${l}</a>`).join('\n    ')}
+    </div>
     <div class="row"><a class="btn btn-outline btn-sm btn-full" href="/contact">Log in</a><a class="btn btn-primary btn-sm btn-full" href="/contact">Request a demo</a></div>
   </div>
 </header>`;
