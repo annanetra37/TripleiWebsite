@@ -51,13 +51,13 @@ function header(active) {
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="var(--ink-900)" stroke-width="2.2" stroke-linecap="round"/></svg>
     </button>
   </div>
-  <div class="mobile-menu">
+</header>
+<div class="mobile-menu">
     <div class="mobile-menu-scroll">
     ${NAV.map(([l,h]) => `<a href="${h}">${l}</a>`).join('\n    ')}
     </div>
     <div class="row"><a class="btn btn-outline btn-sm btn-full" href="/contact">Log in</a><a class="btn btn-primary btn-sm btn-full" href="/contact">Request a demo</a></div>
-  </div>
-</header>`;
+  </div>`;
 }
 
 function ctaSection() {
