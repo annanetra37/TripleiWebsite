@@ -91,6 +91,60 @@
   });
 
   // Contact / demo forms — posted to FormSubmit, acknowledged inline
+  /* Gated white-paper download. The details go through the same /api/submit
+     pipeline as the contact and demo forms, so they land in the same inbox;
+     the file is only handed over once that POST has succeeded. */
+  document.querySelectorAll('form[data-download-form]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type=submit]');
+      var original = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      var file = form.getAttribute('data-download-file');
+      var name = form.getAttribute('data-download-name') || '';
+
+      var deliver = function () {
+        var a = document.createElement('a');
+        a.href = file;
+        if (name) a.download = name;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      };
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (r) { return r.ok ? r.json() : Promise.reject(r); })
+        .then(function () {
+          deliver();
+          var card = form.closest('.form-card') || form.parentNode;
+          card.innerHTML =
+            '<div class="stack" style="align-items:center;text-align:center;gap:16px;padding:40px 12px">' +
+            '<span style="width:64px;height:64px;border-radius:50%;background:var(--green-50);display:inline-flex;align-items:center;justify-content:center">' +
+            '<svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="var(--brand)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+            '<h3 class="h2" style="font-size:var(--fs-h3)">Your download is on its way</h3>' +
+            '<p class="muted">If it did not start automatically, use the link below.</p>' +
+            '<a class="btn btn-primary" href="' + file + '"' + (name ? ' download="' + name + '"' : '') + '>Download the white paper</a>' +
+            '</div>';
+        })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = original || 'Try again'; }
+          var warn = form.querySelector('[data-form-error]');
+          if (!warn) {
+            warn = document.createElement('p');
+            warn.setAttribute('data-form-error', '');
+            warn.style.cssText = 'margin:0;font-size:var(--fs-sm);color:#B3261E;text-align:center';
+            form.appendChild(warn);
+          }
+          warn.textContent = 'Something went wrong. Please email info@triplei.io instead.';
+        });
+    });
+  });
+
   document.querySelectorAll('form[data-demo-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
