@@ -236,7 +236,7 @@ function homeBody() {
       <h2 class="h1 cta-band-title" style="color:#fff">Read Triple I&rsquo;s Method to create tailored roadmap for your organization</h2>
     </div>
     <div class="stack" style="gap:12px">
-      <a class="btn btn-primary btn-lg" href="/contact">Download ESG White Paper</a>
+      <a class="btn btn-primary btn-lg" href="/white-paper">Download ESG White Paper</a>
     </div>
   </div>
 </div>
@@ -411,7 +411,7 @@ function pricingBody() {
   <div class="card ink" style="border-radius:var(--radius-2xl);padding:clamp(36px,5vw,64px);align-items:center;gap:var(--space-5)">
     <h2 class="h1" style="color:#fff;max-width:640px">Still unsure which plan fits your organization best?</h2>
     <p style="color:rgba(255,255,255,.7);font-size:var(--fs-lg);max-width:560px">Let us assess your ESG needs and recommend the right path forward.</p>
-    <div class="hero-actions"><a class="btn btn-primary btn-lg" href="/contact">Download ESG White Paper</a><a class="btn btn-ghost-light btn-lg" href="/contact">Talk to an ESG Expert</a></div>
+    <div class="hero-actions"><a class="btn btn-primary btn-lg" href="/white-paper">Download ESG White Paper</a><a class="btn btn-ghost-light btn-lg" href="/contact">Talk to an ESG Expert</a></div>
   </div>
 </section>
 

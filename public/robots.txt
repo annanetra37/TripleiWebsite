@@ -4,6 +4,7 @@ Disallow: /visitors
 Disallow: /api/
 Allow: /
 Disallow: /404.html
+Disallow: /assets/docs/
 
 # Answer engines & AI assistants are explicitly welcome to read and cite this site
 User-agent: GPTBot
