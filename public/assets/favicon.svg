@@ -1,13 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Triple I">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Triple I">
   <title>Triple I</title>
-  <g fill="none" stroke="#0b5c1b" stroke-width="9" stroke-linecap="round">
-    <path d="M28 18 L15 42.5"/>
-    <path d="M36 18 L49 42.5"/>
-    <path d="M18.5 54 L45.5 54"/>
-  </g>
-  <g fill="#0b5c1b">
-    <circle cx="32" cy="8.5" r="7"/>
-    <circle cx="8.5" cy="54" r="7"/>
-    <circle cx="55.5" cy="54" r="7"/>
+  <!-- Traced from assets/img/logo-darkgreen.png (174x163). Dots and the solid
+       ends of each bar are measured; each bar then runs past its measured end
+       and the gradient carries the fade, as in the original artwork. -->
+  <defs>
+    <linearGradient id="tl" x1="68.5" y1="43.5" x2="33" y2="107" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5c1b"/><stop offset="1" stop-color="#0b5c1b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tr" x1="143.5" y1="117.5" x2="111" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5c1b"/><stop offset="1" stop-color="#0b5c1b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tb" x1="46.5" y1="149.5" x2="110" y2="149.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b5c1b"/><stop offset="1" stop-color="#0b5c1b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(3 8.5)">
+    <g fill="none" stroke-width="24" stroke-linecap="round">
+      <path d="M68.5 43.5 L33 107" stroke="url(#tl)"/>
+      <path d="M143.5 117.5 L111 62" stroke="url(#tr)"/>
+      <path d="M46.5 149.5 L112 149.5" stroke="url(#tb)"/>
+    </g>
+    <g fill="#0b5c1b">
+      <circle cx="86.4" cy="12.4" r="13"/>
+      <circle cx="12.8" cy="148.8" r="13"/>
+      <circle cx="160.7" cy="149.2" r="13"/>
+    </g>
   </g>
 </svg>
