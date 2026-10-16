@@ -163,6 +163,8 @@ function layout({ title, desc, path, body, active, ld }) {
 <meta name="twitter:image" content="${img.ecohubArch.replace('assets','https://triplei.io/assets')}">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/icon-96.png">
 <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
