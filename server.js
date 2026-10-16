@@ -454,9 +454,16 @@ function route_(req, res) {
   const ext = path.extname(file).toLowerCase();
   const type = MIME[ext] || 'application/octet-stream';
   const isHTML = ext === '.html';
+  // Icons change rarely but must propagate quickly when they do: a week-long
+  // max-age means a browser keeps a stale favicon long after a redeploy and
+  // never asks for the new one.
+  const isIcon = /(^|\/)favicon\.(ico|svg)$|\/assets\/img\/icons\//.test(file.replace(/\\/g, '/'))
+    || ext === '.webmanifest';
   const cache = isHTML
     ? 'public, max-age=0, must-revalidate'
-    : 'public, max-age=604800, stale-while-revalidate=86400';
+    : isIcon
+      ? 'public, max-age=86400, must-revalidate'
+      : 'public, max-age=604800, stale-while-revalidate=86400';
 
   // Media needs byte-range support: Safari (and iOS in particular) probes a
   // video with `Range: bytes=0-1` and refuses to play it at all unless the
