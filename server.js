@@ -37,6 +37,7 @@ const MIME = {
   '.webm': 'video/webm',
   '.mov': 'video/quicktime',
   '.pdf': 'application/pdf',
+  '.webmanifest': 'application/manifest+json',
 };
 
 // Media types that browsers fetch with a Range request before playing.

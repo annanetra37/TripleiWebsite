@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#ECF8EE"></rect><g><rect x="6" y="18" width="5" height="8" rx="2.5" fill="#12A02A"></rect><rect x="13.5" y="12" width="5" height="14" rx="2.5" fill="#12A02A"></rect><rect x="21" y="6" width="5" height="20" rx="2.5" fill="#12A02A"></rect></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Triple I">
+  <title>Triple I</title>
+  <g fill="none" stroke="#0b5c1b" stroke-width="9" stroke-linecap="round">
+    <path d="M28 18 L15 42.5"/>
+    <path d="M36 18 L49 42.5"/>
+    <path d="M18.5 54 L45.5 54"/>
+  </g>
+  <g fill="#0b5c1b">
+    <circle cx="32" cy="8.5" r="7"/>
+    <circle cx="8.5" cy="54" r="7"/>
+    <circle cx="55.5" cy="54" r="7"/>
+  </g>
+</svg>
